@@ -1,0 +1,110 @@
+﻿@model IEnumerable<BLL.DTO.EmployeeDTO>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3 border-right">
+
+            <form asp-action="AllEmployees" method="get">
+                <div class="row">
+                    <div class="col form-group">
+                        <label id="salaryLabel">Salary: 0</label>
+                        <input type="range" class="form-control" id="salaryRange"
+                               min="0" max="@Model.Max(x=>x.Salary)" value="0" name="salary">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col form-group">
+                        <label>Position: </label>
+                        <select class="form-control" name="position">
+                            <option value="all">All</option>
+                            <option value="ceo">CEO</option>
+                            <option value="deliverymanager">Delivery Manager</option>
+                            <option value="salesmanager">Sales Manager</option>
+                            <option value="developer">Developer</option>
+                            <option value="marketer">Marketer</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col">
+                        <button class="btn btn-outline-secondary form-control">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-md-9 mt-3">
+            @*<div class="row">
+                <div class="col-2">
+                    <label>Sorted by: </label>
+                </div>
+                <div class="col-10">
+                    <form method="get" asp-action="AllEmployees">
+                        <select class="form-control" name="sortedBy">
+                            <option value="all">All</option>
+                            <option value="name">Name</option>
+                            <option value="salary">Salary</option>
+                            <option value="position">Position</option>
+                        </select>
+                        <button class="btn btn-outline-secondary mt-4">submit</button>
+                    </form>
+                </div>
+            </div>*@
+
+            <form>
+                <div class="row mt-3">
+                    <form method="get" asp-action="AllEmployees">
+                        <div class="col-md-9">
+                            <input type="text" placeholder="search" class="form-control"name="search">
+                        </div>
+                        <div class="col-md-3">
+                            <button class="btn btn-outline-secondary form-control">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+                                    <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                                </svg> search
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </form>
+            <div class="row">
+                <div class="col">
+                    <table class="table table-striped mt-5">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col"><a asp-action="AllEmployees" asp-route-sortedBy="lastname">Last Name</a></th>
+                            <th scope="col"><a asp-action="AllEmployees" asp-route-sortedBy="firstname">First Name</a></th>
+                            <th scope="col"><a asp-action="AllEmployees" asp-route-sortedBy="position">Position</a></th>
+                            <th scope="col"><a asp-action="AllEmployees" asp-route-sortedBy="salary">Salary</a></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @for (int i = 0; i < Model.Count(); i++)
+                        {
+                            <tr>
+                                <th scope="row">@(i + 1)</th>
+                                <td>@Model.ToList()[i].LastName</td>
+                                <td>@Model.ToList()[i].FirstName</td>
+                                <td>@Model.ToList()[i].PositionName</td>
+                                <td>@Model.ToList()[i].Salary $</td>
+                            </tr>
+                        }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    let label = document.getElementById("salaryLabel");
+    let range = document.getElementById("salaryRange");
+    range.oninput = ()=>{
+        label.innerHTML = "Salary: " + range.value;
+    }
+        
+
+</script>

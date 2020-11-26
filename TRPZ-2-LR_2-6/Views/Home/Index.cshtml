@@ -1,0 +1,59 @@
+﻿@using BLL.DTO
+@model BLL.DTO.EmployeeDTO
+
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <div class="card text-center mt-3">
+                <div class="card-header">
+                    <h2>@Model.FirstName @Model.LastName</h2>
+                </div>
+                <div class="card-body">
+                    <svg width="10em" height="10em" viewBox="0 0 16 16" class="bi bi-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                    </svg>
+                </div>
+                <div class="card-footer text-muted">
+                    <h3>@Model.PositionName</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="text-secondary text-center my-5">@Model.FirstName 's subjects: </h3>
+
+    @for (int i = 0; i < Model.Subjects.Count(); i += 3)
+    {
+
+<div class="row">
+    <div class="card-deck text-center my-4">
+
+        @foreach(var employee in @Model.Subjects.Skip(i).Take(3)) { 
+            <div class="card">
+                <div class="card-header">
+                    <h4>
+                        @if (employee is Worker)
+                        {
+                        <p>@employee.FirstName @employee.LastName</p>
+                        }
+                        else
+                        {
+                            <a asp-action="EmployeeById" asp-route-id="@employee.Id">@employee.FirstName @employee.LastName</a>
+                        }
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <svg width="6em" height="6em" viewBox="0 0 16 16" class="bi bi-person-fill card-img-top" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                    </svg>
+                </div>
+                <div class="card-footer">
+                    <p>@employee.PositionName</p>
+                </div>
+            </div>
+
+        }
+        </div>
+    </div>
+    }
+</div>

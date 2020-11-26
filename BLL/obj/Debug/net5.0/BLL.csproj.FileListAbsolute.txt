@@ -1,0 +1,15 @@
+C:\Users\CSharpSila\source\repos\TRPZ-2-LR_2-6\BLL\obj\Debug\net5.0\BLL.csprojAssemblyReference.cache
+C:\Users\CSharpSila\source\repos\TRPZ-2-LR_2-6\BLL\obj\Debug\net5.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\CSharpSila\source\repos\TRPZ-2-LR_2-6\BLL\obj\Debug\net5.0\BLL.AssemblyInfoInputs.cache
+C:\Users\CSharpSila\source\repos\TRPZ-2-LR_2-6\BLL\obj\Debug\net5.0\BLL.AssemblyInfo.cs
+C:\Users\CSharpSila\source\repos\TRPZ-2-LR_2-6\BLL\obj\Debug\net5.0\BLL.csproj.CoreCompileInputs.cache
+C:\Users\CSharpSila\source\repos\TRPZ-2-LR_2-6\BLL\bin\Debug\net5.0\BLL.deps.json
+C:\Users\CSharpSila\source\repos\TRPZ-2-LR_2-6\BLL\bin\Debug\net5.0\BLL.dll
+C:\Users\CSharpSila\source\repos\TRPZ-2-LR_2-6\BLL\bin\Debug\net5.0\ref\BLL.dll
+C:\Users\CSharpSila\source\repos\TRPZ-2-LR_2-6\BLL\bin\Debug\net5.0\BLL.pdb
+C:\Users\CSharpSila\source\repos\TRPZ-2-LR_2-6\BLL\bin\Debug\net5.0\DAL.dll
+C:\Users\CSharpSila\source\repos\TRPZ-2-LR_2-6\BLL\bin\Debug\net5.0\DAL.pdb
+C:\Users\CSharpSila\source\repos\TRPZ-2-LR_2-6\BLL\obj\Debug\net5.0\BLL.csproj.CopyComplete
+C:\Users\CSharpSila\source\repos\TRPZ-2-LR_2-6\BLL\obj\Debug\net5.0\BLL.dll
+C:\Users\CSharpSila\source\repos\TRPZ-2-LR_2-6\BLL\obj\Debug\net5.0\ref\BLL.dll
+C:\Users\CSharpSila\source\repos\TRPZ-2-LR_2-6\BLL\obj\Debug\net5.0\BLL.pdb

@@ -1,0 +1,104 @@
+﻿@model CreateEmployeeViewModel
+
+<div class="container">
+    <div class="row mb-3">
+        <div class="offset-md-3 col-md-6">
+            <form class="border rounded p-4 mt-4" method="post" asp-action="CreateEmployee">
+                <div class="row mb-3">
+                    <div class="col">
+                        <label>First Name:</label>
+                        <input type="text" class="form-control" name="firstname">
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col">
+                        <label>Last Name:</label>
+                        <input type="text" class="form-control" name="lastname">
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col">
+                        <label>Position: </label>
+                        <select class="form-control" name="positionname" id="positionSelect">
+                            @*@foreach (var position in Model.Positions)
+                            {
+                                <option value="@position">@position</option>
+                            }*@
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col">
+                        <label>Manager: </label>
+                        <select class="form-control" name="masterid" id="managerSelect">
+                            @*@foreach (var master in Model.Masters)
+                            {
+                                <option value="@master.Id">@master.PositionName @master.LastName @master.FirstName</option>
+                            }*@
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button class="btn btn-outline-success btn-lg form-control mt-3">Create</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    let possel = document.getElementById("positionSelect");
+    let positions = ["Sales Manager", "Delivery Manager", "Developer", "Marketer"];
+    for(let i of positions){
+        let a = document.createElement("option");
+        a.value=i;
+        a.text=i;
+        possel.appendChild(a);
+    }
+
+    possel.onchange = () =>{
+        let managsel = document.getElementById("managerSelect");
+        managsel.innerHTML = "";
+        if(possel.value == "Sales Manager" || possel.value == "Delivery Manager"){
+            let a = document.createElement("option");
+           @{
+               var ceo = Model.Masters.First(x => x.PositionName == "CEO");
+           }
+            a.value = "@ceo.Id";
+            a.text = "@ceo.PositionName @ceo.LastName @ceo.FirstName";
+            managsel.appendChild(a);
+        }
+        else if (possel.value == "Developer") {
+            @{
+                var deliveries = Model.Masters.Where(x => x.PositionName == "Delivery Manager");
+            }
+            let a;
+            @foreach (var man in deliveries)
+            {
+                <text>
+                     a = document.createElement("option");
+                     a.value = "@man.Id";
+                     a.text = "@man.PositionName @man.LastName @man.FirstName";
+                     managsel.appendChild(a);
+                 </text>
+            }
+        }
+        else{
+            @{
+                var sales = Model.Masters.Where(x => x.PositionName == "Sales Manager");
+            }
+            let a;
+            @foreach (var man in sales)
+            {
+                <text>
+                    a = document.createElement("option");
+                    a.value = "@man.Id";
+                    a.text = "@man.PositionName @man.LastName @man.FirstName";
+                    managsel.appendChild(a);
+                </text>
+            }
+        }
+    }
+</script>

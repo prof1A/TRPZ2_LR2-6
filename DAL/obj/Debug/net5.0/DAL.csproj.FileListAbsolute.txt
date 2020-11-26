@@ -1,0 +1,12 @@
+C:\Users\CSharpSila\source\repos\TRPZ-2-LR_2-6\DAL\obj\Debug\net5.0\DAL.csprojAssemblyReference.cache
+C:\Users\CSharpSila\source\repos\TRPZ-2-LR_2-6\DAL\obj\Debug\net5.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\CSharpSila\source\repos\TRPZ-2-LR_2-6\DAL\obj\Debug\net5.0\DAL.AssemblyInfoInputs.cache
+C:\Users\CSharpSila\source\repos\TRPZ-2-LR_2-6\DAL\obj\Debug\net5.0\DAL.AssemblyInfo.cs
+C:\Users\CSharpSila\source\repos\TRPZ-2-LR_2-6\DAL\obj\Debug\net5.0\DAL.csproj.CoreCompileInputs.cache
+C:\Users\CSharpSila\source\repos\TRPZ-2-LR_2-6\DAL\bin\Debug\net5.0\DAL.deps.json
+C:\Users\CSharpSila\source\repos\TRPZ-2-LR_2-6\DAL\bin\Debug\net5.0\DAL.dll
+C:\Users\CSharpSila\source\repos\TRPZ-2-LR_2-6\DAL\bin\Debug\net5.0\ref\DAL.dll
+C:\Users\CSharpSila\source\repos\TRPZ-2-LR_2-6\DAL\bin\Debug\net5.0\DAL.pdb
+C:\Users\CSharpSila\source\repos\TRPZ-2-LR_2-6\DAL\obj\Debug\net5.0\DAL.dll
+C:\Users\CSharpSila\source\repos\TRPZ-2-LR_2-6\DAL\obj\Debug\net5.0\ref\DAL.dll
+C:\Users\CSharpSila\source\repos\TRPZ-2-LR_2-6\DAL\obj\Debug\net5.0\DAL.pdb
