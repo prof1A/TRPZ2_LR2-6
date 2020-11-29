@@ -20,7 +20,8 @@ namespace BLL.Services
         {
             _employeeRepository = employeeRepository;
             _initializer = initializer;
-            _initializer.Initialize();
+            if(_initializer != null)
+                _initializer.Initialize();
         }
 
         public void Create(EmployeeDTO obj)
